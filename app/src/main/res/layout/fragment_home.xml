@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F6F6F6">
+
+    <!-- Top Bar -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Quote Verse"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#2D3748"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- QUOTE CARD -->
+    <LinearLayout
+        android:id="@+id/quoteCard"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/card_background"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/addFavBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/quoteText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The only way to do great work is to love what you do."
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/quoteAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Steve Jobs"
+                android:textAlignment="center"
+                android:textColor="#888888"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ADD TO FAVORITES BUTTON -->
+    <com.google.android.material.button.MaterialButton
+    android:id="@+id/addFavBtn"
+    android:layout_width="match_parent"
+    android:layout_height="67dp"
+    android:text="Add to Favorites"
+    android:textAllCaps="false"
+    android:textColor="@android:color/black"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    app:backgroundTint="@color/white"
+    app:cornerRadius="15dp"
+    app:layout_constraintBottom_toTopOf="@+id/nextBtn"
+    app:strokeColor="#FF7D4B"
+    app:strokeWidth="2dp"
+    tools:layout_editor_absoluteX="16dp" />
+
+    <!-- NEXT QUOTE BUTTON -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextBtn"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:backgroundTint="#FF7D4B"
+        android:text="Next Quote"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
