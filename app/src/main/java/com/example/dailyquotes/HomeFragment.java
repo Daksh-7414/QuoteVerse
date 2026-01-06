@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
 
     private void loadQuotesFromJson() {
         try {
-            // JSON file read करें
+            // JSON file read
             InputStream is = getActivity().getAssets().open("quotes.json");
             int size = is.available();
             byte[] buffer = new byte[size];
@@ -72,14 +72,14 @@ public class HomeFragment extends Fragment {
 
             String json = new String(buffer, "UTF-8");
 
-            // Gson का use करके JSON को ArrayList में convert करें
+            // use gson to convert json obj to arraylist
             Gson gson = new Gson();
             Type listType = new TypeToken<ArrayList<QuoteModel>>(){}.getType();
             list = gson.fromJson(json, listType);
 
         } catch (Exception e) {
             e.printStackTrace();
-            // Error case में default quotes add करें
+            // default quote if error
             loadDefaultQuotes();
         }
     }
